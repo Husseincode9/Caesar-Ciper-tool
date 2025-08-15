@@ -93,9 +93,4 @@ Try improving this project by:
 -   Making a GUI using Tkinter or web version with Flask
     
 
-# Thanks for Encrypting with Us!
-
-If you enjoyed this project, keep exploring the world of **cryptography**. From ancient ciphers to modern-day security, there's a lot more to learn!
-
-
-> **Stay curious. Stay encrypted.**
+# Thanks for checking this out!
