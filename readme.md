@@ -1,9 +1,7 @@
 
-# Welcome to the Caesar Cipher Tool!
+# Hussein's Caesar Cipher Tool!
 
-Hi! I'm your first encryption tool using the **Caesar Cipher** in Python. If you want to explore classical cryptography, you can read me. If you want to try encrypting and decrypting secret messages, you can run me. Once you've finished using me, you can even expand me into something more advanced!
-
-# About the Caesar Cipher
+## About the Caesar Cipher
 
 The Caesar Cipher is one of the **oldest known encryption techniques**, used as early as the **1st century BC** by **Julius Caesar**. It's a **substitution cipher** that works by shifting the letters of the alphabet by a fixed number of positions.
 
@@ -98,5 +96,6 @@ Try improving this project by:
 # Thanks for Encrypting with Us!
 
 If you enjoyed this project, keep exploring the world of **cryptography**. From ancient ciphers to modern-day security, there's a lot more to learn!
+
 
 > **Stay curious. Stay encrypted.**
