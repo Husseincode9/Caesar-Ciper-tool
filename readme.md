@@ -68,29 +68,6 @@ This tool is written in **Python**. To run it:
     
 
 > Tip: If you're using an online Python environment or editor like Replit, just paste in the code and hit Run.
-
-# Educational Value
-
-This tool is great for:
-
--   Beginners learning about strings and loops in Python
     
--   Understanding classical encryption methods
-    
--   Exploring the concept of modular arithmetic
-    
--   Creating fun puzzles or secret messages with friends
-    
-
-# Want to Go Further?
-
-Try improving this project by:
-
--   Adding automatic decryption with frequency analysis
-    
--   Supporting file-based encryption
-    
--   Making a GUI using Tkinter or web version with Flask
-    
-
 # Thanks for checking this out!
+
