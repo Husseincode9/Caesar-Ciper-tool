@@ -35,16 +35,8 @@ This tool takes your input message and shifts each letter by a number you specif
 
 ## Example Usage
 
-pgsql
-
-CopyEdit
-
 `Enter a message to encrypt: Hello World
 Enter shift value: 3  Encrypted message: Khoor Zruog` 
-
-yaml
-
-CopyEdit
 
 `Enter a message to decrypt:  Khoor  Zruog  Enter shift value:  3  Decrypted message:  Hello  World` 
 
@@ -68,5 +60,6 @@ This tool is written in **Python**. To run it:
 > Tip: If you're using an online Python environment or editor like Replit, just paste in the code and hit Run.
     
 # Thanks for checking this out!
+
 
 
