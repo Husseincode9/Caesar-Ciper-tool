@@ -58,16 +58,15 @@ This tool is written in **Python**. To run it:
     
 3.  Run the file:
     
-    nginx
-    
-    CopyEdit
-    
-    `python caesar_cipher_tool.py` 
+  Depending on what version of python you are running e.g "python3" or "python" the command varies.
+
+  python3 caesar.py
+
     
 4.  Follow the on-screen instructions to encrypt or decrypt messages.
     
-
 > Tip: If you're using an online Python environment or editor like Replit, just paste in the code and hit Run.
     
 # Thanks for checking this out!
+
 
