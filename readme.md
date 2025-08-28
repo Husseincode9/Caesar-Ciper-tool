@@ -59,3 +59,7 @@ This tool is written in **Python**. To run it:
 > Tip: If you're using an online Python environment or editor like Replit, just paste in the code and hit Run.
     
 # Thanks for checking this out!
+THINGS I WANT TO ADD:
+
+1. Add GUI.
+2. Add a GUI viewer to my soon to be website.
