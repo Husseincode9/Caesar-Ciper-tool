@@ -1,65 +1,77 @@
 
-# Hussein's Caesar Cipher Tool!
+Hussein's Caesar Cipher Tool
+About the Caesar Cipher
 
-## About the Caesar Cipher
+The Caesar Cipher is one of the oldest known encryption techniques, dating back to the 1st century BC. It was famously used by Julius Caesar to protect military communications.
 
-The Caesar Cipher is one of the **oldest known encryption techniques**, used as early as the **1st century BC** by **Julius Caesar**. It's a **substitution cipher** that works by shifting the letters of the alphabet by a fixed number of positions.
+It works as a substitution cipher, shifting each letter in the alphabet by a fixed number.
 
-For example, shifting `"A"` by 3 gives `"D"`, `"B"` becomes `"E"`, and so on.
+Example:
 
-> Caesar reportedly used it to protect military communications.
+"A" shifted by 3 → "D"
 
-## How It Works
+"B" → "E"
 
-This tool takes your input message and shifts each letter by a number you specify.
+"HELLO" → "KHOOR"
 
--   Letters are rotated through the alphabet.
-    
--   Non-letter characters (spaces, punctuation) remain unchanged.
-    
--   It supports **both encryption and decryption** using the same logic.
-    
+How This Tool Works
 
-## Features
+This program allows you to encrypt or decrypt text with a Caesar Cipher shift of your choice.
 
--   Encrypt your message with a custom shift value
-    
--   Decrypt a message using the correct shift
-    
--   Simple menu-driven terminal interface
-    
--   Handles uppercase and lowercase letters
-    
--   Ignores special characters and numbers during transformation
-    
+Letters are rotated through the alphabet
 
-## Example Usage
+Non-letter characters (spaces, punctuation, numbers) remain unchanged
 
-`Enter a message to encrypt: Hello World
-Enter shift value: 3  Encrypted message: Khoor Zruog` 
+Supports both encryption and decryption
 
-`Enter a message to decrypt:  Khoor  Zruog  Enter shift value:  3  Decrypted message:  Hello  World` 
+Handles uppercase and lowercase
 
-# How to Run It
+Features
 
-This tool is written in **Python**. To run it:
+Encrypt messages with a custom shift value
 
-1.  Make sure you have Python 3 installed.
-    
-2.  Open your terminal or command prompt.
-    
-3.  Run the file:
-    
-  Depending on what version of python you are running e.g "python3" or "python" the command varies.
+Decrypt messages with the correct shift
 
-  python3 caesar.py
+Menu-driven terminal interface
 
-    
-4.  Follow the on-screen instructions to encrypt or decrypt messages.
-    
-> Tip: If you're using an online Python environment or editor like Replit, just paste in the code and hit Run.
-    
-# Thanks for checking this out!
+Works with both uppercase and lowercase letters
+
+Skips special characters and numbers
+
+Example Usage
+Enter a message to encrypt: Hello World
+Enter shift value: 3
+
+Encrypted message: Khoor Zruog
+
+Enter a message to decrypt: Khoor Zruog
+Enter shift value: 3
+
+Decrypted message: Hello World
+
+How to Run
+
+This project is written in Python. To run it:
+
+Ensure you have Python 3 installed.
+
+Open your terminal or command prompt.
+
+Run the file (the command may vary depending on your setup):
+
+python3 caesar.py
+
+
+or
+
+python caesar.py
+
+
+Follow the on-screen instructions to encrypt or decrypt your text.
+
+If you're using an online editor such as Replit, paste in the code and click Run.
+
+Thanks for Reading
 
 
 
