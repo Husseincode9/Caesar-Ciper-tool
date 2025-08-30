@@ -1,38 +1,105 @@
-def caesar_encrypt(text, shift):  # Define a function to encrypt text using Caesar cipher with a given shift.
-    result = ""  # Initialize an empty string to store the encrypted result.
-    for char in text:  # Loop through each character in the input text.
-        if char.isalpha():  # Check if the character is a letter.
-            base = ord('A') if char.isupper() else ord('a')  # Determine the ASCII base depending on case.
-            result += chr((ord(char) - base + shift) % 26 + base)  # Shift character and append to result.
+# I am using tkinter which is Python's built-in GUI framework
+# This lets me create windows, buttons, labels, and text boxes
+import tkinter as tk  
+
+# I also need messagebox from tkinter so I can show error pop-ups
+from tkinter import messagebox  
+
+# ==================== Caesar Cipher Functions ====================
+
+def caesar_encrypt(text, shift):
+    """
+    Encrypts text by shifting letters by the given shift value.
+    """
+    result = ""  # this will store the encrypted text
+    for char in text:  # loop through each character
+        if char.isalpha():  # only shift letters (ignore numbers, spaces, punctuation)
+            base = ord('A') if char.isupper() else ord('a')  
+            # work out the base code depending if it’s uppercase or lowercase
+            result += chr((ord(char) - base + shift) % 26 + base)
+            # shift the character and wrap around the alphabet using modulo
         else:
-            result += char  # If not a letter, leave it unchanged and append it as-is.
-    return result  # Return the final encrypted string.
+            result += char  # keep non-letters the same
+    return result
 
-def caesar_decrypt(cipher_text, shift):  # Define a function to decrypt text using Caesar cipher.
-    return caesar_encrypt(cipher_text, -shift)  # Decryption is just encryption with the negative shift.
+def caesar_decrypt(cipher_text, shift):
+    """
+    Decrypts text by shifting letters in the opposite direction.
+    """
+    return caesar_encrypt(cipher_text, -shift)  
+    # decryption is just encryption with a negative shift
 
-def main():  # Define the main function to run the encryption/decryption tool.
-    print("=== Caesar Cipher Tool ===")  # Display the tool's title.
-    while True:  # Start an infinite loop to continually prompt the user.
-        choice = input("\nChoose an option:\n1. Encrypt\n2. Decrypt\n3. Exit\nEnter choice: ")  # Menu prompt.
 
-        if choice == '1':  # If user chooses to encrypt
-            message = input("Enter a message to encrypt: ")  # Prompt for the message.
-            shift = int(input("Enter shift value: "))  # Prompt for the shift value and convert to integer.
-            encrypted = caesar_encrypt(message, shift)  # Encrypt the message using the Caesar cipher.
-            print("Encrypted message:", encrypted)  # Print the encrypted message.
+# ==================== Button Functions ====================
 
-        elif choice == '2':  # If user chooses to decrypt
-            cipher_text = input("Enter a message to decrypt: ")  # Prompt for the encrypted message.
-            shift = int(input("Enter shift value: "))  # Prompt for the shift used in encryption.
-            decrypted = caesar_decrypt(cipher_text, shift)  # Decrypt the message.
-            print("Decrypted message:", decrypted)  # Print the decrypted message.
+def encrypt_text():
+    """
+    Runs when I press the Encrypt button.
+    Gets the input text and shift, encrypts it, and shows the result.
+    """
+    try:
+        shift = int(shift_entry.get())  # take the shift value from the entry box
+        message = text_entry.get("1.0", tk.END).strip()  
+        # get all the text I typed in the input box
+        encrypted = caesar_encrypt(message, shift)  # call my encrypt function
+        output_text.delete("1.0", tk.END)  # clear previous output
+        output_text.insert(tk.END, encrypted)  # show the new encrypted text
+    except ValueError:
+        # if the user types something that isn’t an integer in shift box
+        messagebox.showerror("Invalid Input", "Shift value must be an integer.")
 
-        elif choice == '3':  # If user chooses to exit
-            print("Exiting...")  # Print exit message.
-            break  # Break the loop to exit the program.
-        else:
-            print("Invalid choice. Please select 1, 2, or 3.")  # Handle invalid input.
+def decrypt_text():
+    """
+    Runs when I press the Decrypt button.
+    Gets the input text and shift, decrypts it, and shows the result.
+    """
+    try:
+        shift = int(shift_entry.get())  # get the shift value
+        cipher_text = text_entry.get("1.0", tk.END).strip()  # get the text from the box
+        decrypted = caesar_decrypt(cipher_text, shift)  # call my decrypt function
+        output_text.delete("1.0", tk.END)  # clear old result
+        output_text.insert(tk.END, decrypted)  # show the decrypted text
+    except ValueError:
+        messagebox.showerror("Invalid Input", "Shift value must be an integer.")
 
-if __name__ == "__main__":  # Ensure the script runs only when executed directly.
-    main()  # Call the main function to start the program.
+
+# ==================== GUI Layout ====================
+
+root = tk.Tk()  # create the main window
+root.title("Caesar Cipher Tool")  # set the title of the window
+
+# label above the text box
+tk.Label(root, text="Enter Text:").pack()
+
+# text box where I type the message
+text_entry = tk.Text(root, height=5, width=50)
+text_entry.pack()
+
+# label above the shift entry
+tk.Label(root, text="Enter Shift Value:").pack()
+
+# entry box where I type the shift number
+shift_entry = tk.Entry(root)
+shift_entry.pack()
+
+# frame to hold the buttons next to each other
+button_frame = tk.Frame(root)
+button_frame.pack(pady=10)
+
+# encrypt button
+encrypt_button = tk.Button(button_frame, text="Encrypt", command=encrypt_text)
+encrypt_button.grid(row=0, column=0, padx=5)
+
+# decrypt button
+decrypt_button = tk.Button(button_frame, text="Decrypt", command=decrypt_text)
+decrypt_button.grid(row=0, column=1, padx=5)
+
+# label above the output box
+tk.Label(root, text="Result:").pack()
+
+# text box where the result will be shown
+output_text = tk.Text(root, height=5, width=50)
+output_text.pack()
+
+# keeps the window running until I close it
+root.mainloop()
